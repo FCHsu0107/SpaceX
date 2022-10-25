@@ -10,7 +10,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
     private func setUpMainWindow() {
-        let vc = ViewController()
+        let vc = UINavigationController(rootViewController: CompanyViewController())
         window?.rootViewController = vc
         window?.makeKeyAndVisible()
     }
