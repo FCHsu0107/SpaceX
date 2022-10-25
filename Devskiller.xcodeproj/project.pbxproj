@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		48D69BC72514ECC700DD96AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D69BC62514ECC700DD96AA /* AppDelegate.swift */; };
 		48D69BC92514ECC700DD96AA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D69BC82514ECC700DD96AA /* SceneDelegate.swift */; };
-		48D69BCB2514ECC700DD96AA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D69BCA2514ECC700DD96AA /* ViewController.swift */; };
+		48D69BCB2514ECC700DD96AA /* CompanyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D69BCA2514ECC700DD96AA /* CompanyViewController.swift */; };
 		48D69BD12514ECC700DD96AA /* Devskiller.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 48D69BCF2514ECC700DD96AA /* Devskiller.xcdatamodeld */; };
 		48D69BD32514ECC800DD96AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48D69BD22514ECC800DD96AA /* Assets.xcassets */; };
 		48D69BD62514ECC800DD96AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48D69BD42514ECC800DD96AA /* LaunchScreen.storyboard */; };
@@ -19,6 +19,11 @@
 		B96D3F8D29045B9800756D16 /* URLSessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96D3F8C29045B9800756D16 /* URLSessionProtocol.swift */; };
 		B96D3F8F29045C6B00756D16 /* Bundle+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96D3F8E29045C6B00756D16 /* Bundle+Ext.swift */; };
 		B96D3F9129045DC300756D16 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96D3F9029045DC300756D16 /* HTTPClient.swift */; };
+		B9BAC9DB29086F9E00DB68DD /* CompanyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BAC9DA29086F9E00DB68DD /* CompanyTableViewCell.swift */; };
+		B9BAC9DF290870E000DB68DD /* TheTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BAC9DE290870E000DB68DD /* TheTheme.swift */; };
+		B9BAC9E1290871E000DB68DD /* LaunchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BAC9E0290871E000DB68DD /* LaunchTableViewCell.swift */; };
+		B9BAC9E329087E2E00DB68DD /* UIStackView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BAC9E229087E2E00DB68DD /* UIStackView+Ext.swift */; };
+		B9BAC9E52908811B00DB68DD /* UITableView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BAC9E42908811B00DB68DD /* UITableView+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,7 +47,7 @@
 		48D69BC32514ECC700DD96AA /* Devskiller.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Devskiller.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48D69BC62514ECC700DD96AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48D69BC82514ECC700DD96AA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		48D69BCA2514ECC700DD96AA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		48D69BCA2514ECC700DD96AA /* CompanyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyViewController.swift; sourceTree = "<group>"; };
 		48D69BD02514ECC700DD96AA /* Devskiller.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Devskiller.xcdatamodel; sourceTree = "<group>"; };
 		48D69BD22514ECC800DD96AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		48D69BD52514ECC800DD96AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -57,6 +62,11 @@
 		B96D3F8C29045B9800756D16 /* URLSessionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionProtocol.swift; sourceTree = "<group>"; };
 		B96D3F8E29045C6B00756D16 /* Bundle+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Ext.swift"; sourceTree = "<group>"; };
 		B96D3F9029045DC300756D16 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		B9BAC9DA29086F9E00DB68DD /* CompanyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyTableViewCell.swift; sourceTree = "<group>"; };
+		B9BAC9DE290870E000DB68DD /* TheTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheTheme.swift; sourceTree = "<group>"; };
+		B9BAC9E0290871E000DB68DD /* LaunchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchTableViewCell.swift; sourceTree = "<group>"; };
+		B9BAC9E229087E2E00DB68DD /* UIStackView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Ext.swift"; sourceTree = "<group>"; };
+		B9BAC9E42908811B00DB68DD /* UITableView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,7 +120,7 @@
 				B96D3F8B29045B5900756D16 /* Extension */,
 				B96D3F852904591B00756D16 /* Model */,
 				B96D3F842903FBA200756D16 /* Application */,
-				48D69BCA2514ECC700DD96AA /* ViewController.swift */,
+				B9BAC9D929086EFD00DB68DD /* View */,
 				48D69BD22514ECC800DD96AA /* Assets.xcassets */,
 				48D69BD72514ECC800DD96AA /* Info.plist */,
 				48D69BCF2514ECC700DD96AA /* Devskiller.xcdatamodeld */,
@@ -168,8 +178,29 @@
 			isa = PBXGroup;
 			children = (
 				B96D3F8E29045C6B00756D16 /* Bundle+Ext.swift */,
+				B9BAC9E229087E2E00DB68DD /* UIStackView+Ext.swift */,
+				B9BAC9E42908811B00DB68DD /* UITableView+Ext.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		B9BAC9D929086EFD00DB68DD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B9BAC9DD290870BC00DB68DD /* Component */,
+				48D69BCA2514ECC700DD96AA /* CompanyViewController.swift */,
+				B9BAC9DA29086F9E00DB68DD /* CompanyTableViewCell.swift */,
+				B9BAC9E0290871E000DB68DD /* LaunchTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B9BAC9DD290870BC00DB68DD /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				B9BAC9DE290870E000DB68DD /* TheTheme.swift */,
+			);
+			path = Component;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -305,10 +336,15 @@
 				B96D3F8D29045B9800756D16 /* URLSessionProtocol.swift in Sources */,
 				B96D3F8F29045C6B00756D16 /* Bundle+Ext.swift in Sources */,
 				B96D3F9129045DC300756D16 /* HTTPClient.swift in Sources */,
+				B9BAC9E329087E2E00DB68DD /* UIStackView+Ext.swift in Sources */,
 				48D69BD12514ECC700DD96AA /* Devskiller.xcdatamodeld in Sources */,
-				48D69BCB2514ECC700DD96AA /* ViewController.swift in Sources */,
+				B9BAC9E52908811B00DB68DD /* UITableView+Ext.swift in Sources */,
+				B9BAC9E1290871E000DB68DD /* LaunchTableViewCell.swift in Sources */,
+				48D69BCB2514ECC700DD96AA /* CompanyViewController.swift in Sources */,
 				B96D3F882904593B00756D16 /* Request.swift in Sources */,
 				48D69BC72514ECC700DD96AA /* AppDelegate.swift in Sources */,
+				B9BAC9DF290870E000DB68DD /* TheTheme.swift in Sources */,
+				B9BAC9DB29086F9E00DB68DD /* CompanyTableViewCell.swift in Sources */,
 				48D69BC92514ECC700DD96AA /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
