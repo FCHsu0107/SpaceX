@@ -24,6 +24,10 @@
 		B9BAC9E1290871E000DB68DD /* LaunchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BAC9E0290871E000DB68DD /* LaunchTableViewCell.swift */; };
 		B9BAC9E329087E2E00DB68DD /* UIStackView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BAC9E229087E2E00DB68DD /* UIStackView+Ext.swift */; };
 		B9BAC9E52908811B00DB68DD /* UITableView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BAC9E42908811B00DB68DD /* UITableView+Ext.swift */; };
+		B9BAC9EA2909847A00DB68DD /* CompanyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BAC9E92909847A00DB68DD /* CompanyViewModel.swift */; };
+		B9BAC9EF29098A3100DB68DD /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BAC9EE29098A3100DB68DD /* Company.swift */; };
+		B9BAC9F229098A4D00DB68DD /* APIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BAC9F129098A4D00DB68DD /* APIModel.swift */; };
+		B9BAC9F429098B3800DB68DD /* Launch.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BAC9F329098B3800DB68DD /* Launch.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +71,10 @@
 		B9BAC9E0290871E000DB68DD /* LaunchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchTableViewCell.swift; sourceTree = "<group>"; };
 		B9BAC9E229087E2E00DB68DD /* UIStackView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Ext.swift"; sourceTree = "<group>"; };
 		B9BAC9E42908811B00DB68DD /* UITableView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Ext.swift"; sourceTree = "<group>"; };
+		B9BAC9E92909847A00DB68DD /* CompanyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyViewModel.swift; sourceTree = "<group>"; };
+		B9BAC9EE29098A3100DB68DD /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
+		B9BAC9F129098A4D00DB68DD /* APIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIModel.swift; sourceTree = "<group>"; };
+		B9BAC9F329098B3800DB68DD /* Launch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Launch.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,13 +125,9 @@
 		48D69BC52514ECC700DD96AA /* Devskiller */ = {
 			isa = PBXGroup;
 			children = (
-				B96D3F8B29045B5900756D16 /* Extension */,
-				B96D3F852904591B00756D16 /* Model */,
-				B96D3F842903FBA200756D16 /* Application */,
-				B9BAC9D929086EFD00DB68DD /* View */,
-				48D69BD22514ECC800DD96AA /* Assets.xcassets */,
-				48D69BD72514ECC800DD96AA /* Info.plist */,
-				48D69BCF2514ECC700DD96AA /* Devskiller.xcdatamodeld */,
+				B9BAC9EB2909893D00DB68DD /* Utilities */,
+				B96D3F842903FBA200756D16 /* Supporting Files */,
+				B9BAC9E82909843600DB68DD /* SpeceX */,
 			);
 			path = Devskiller;
 			sourceTree = "<group>";
@@ -146,22 +150,17 @@
 			path = DevskillerUITests;
 			sourceTree = "<group>";
 		};
-		B96D3F842903FBA200756D16 /* Application */ = {
+		B96D3F842903FBA200756D16 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				48D69BD22514ECC800DD96AA /* Assets.xcassets */,
+				48D69BD72514ECC800DD96AA /* Info.plist */,
 				48D69BD42514ECC800DD96AA /* LaunchScreen.storyboard */,
 				48D69BC62514ECC700DD96AA /* AppDelegate.swift */,
 				48D69BC82514ECC700DD96AA /* SceneDelegate.swift */,
+				48D69BCF2514ECC700DD96AA /* Devskiller.xcdatamodeld */,
 			);
-			path = Application;
-			sourceTree = "<group>";
-		};
-		B96D3F852904591B00756D16 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				B96D3F862904592500756D16 /* Network */,
-			);
-			path = Model;
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		B96D3F862904592500756D16 /* Network */ = {
@@ -170,6 +169,7 @@
 				B96D3F872904593B00756D16 /* Request.swift */,
 				B96D3F8C29045B9800756D16 /* URLSessionProtocol.swift */,
 				B96D3F9029045DC300756D16 /* HTTPClient.swift */,
+				B9BAC9F129098A4D00DB68DD /* APIModel.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -187,20 +187,56 @@
 		B9BAC9D929086EFD00DB68DD /* View */ = {
 			isa = PBXGroup;
 			children = (
-				B9BAC9DD290870BC00DB68DD /* Component */,
-				48D69BCA2514ECC700DD96AA /* CompanyViewController.swift */,
 				B9BAC9DA29086F9E00DB68DD /* CompanyTableViewCell.swift */,
+				48D69BCA2514ECC700DD96AA /* CompanyViewController.swift */,
 				B9BAC9E0290871E000DB68DD /* LaunchTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		B9BAC9DD290870BC00DB68DD /* Component */ = {
+		B9BAC9DD290870BC00DB68DD /* UIComponent */ = {
 			isa = PBXGroup;
 			children = (
 				B9BAC9DE290870E000DB68DD /* TheTheme.swift */,
 			);
-			path = Component;
+			path = UIComponent;
+			sourceTree = "<group>";
+		};
+		B9BAC9E82909843600DB68DD /* SpeceX */ = {
+			isa = PBXGroup;
+			children = (
+				B9BAC9ED290989C600DB68DD /* API */,
+				B9BAC9EC2909899800DB68DD /* Company */,
+			);
+			path = SpeceX;
+			sourceTree = "<group>";
+		};
+		B9BAC9EB2909893D00DB68DD /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				B96D3F862904592500756D16 /* Network */,
+				B96D3F8B29045B5900756D16 /* Extension */,
+				B9BAC9DD290870BC00DB68DD /* UIComponent */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		B9BAC9EC2909899800DB68DD /* Company */ = {
+			isa = PBXGroup;
+			children = (
+				B9BAC9E92909847A00DB68DD /* CompanyViewModel.swift */,
+				B9BAC9D929086EFD00DB68DD /* View */,
+			);
+			path = Company;
+			sourceTree = "<group>";
+		};
+		B9BAC9ED290989C600DB68DD /* API */ = {
+			isa = PBXGroup;
+			children = (
+				B9BAC9EE29098A3100DB68DD /* Company.swift */,
+				B9BAC9F329098B3800DB68DD /* Launch.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -337,9 +373,13 @@
 				B96D3F8F29045C6B00756D16 /* Bundle+Ext.swift in Sources */,
 				B96D3F9129045DC300756D16 /* HTTPClient.swift in Sources */,
 				B9BAC9E329087E2E00DB68DD /* UIStackView+Ext.swift in Sources */,
+				B9BAC9F229098A4D00DB68DD /* APIModel.swift in Sources */,
 				48D69BD12514ECC700DD96AA /* Devskiller.xcdatamodeld in Sources */,
 				B9BAC9E52908811B00DB68DD /* UITableView+Ext.swift in Sources */,
+				B9BAC9EA2909847A00DB68DD /* CompanyViewModel.swift in Sources */,
+				B9BAC9F429098B3800DB68DD /* Launch.swift in Sources */,
 				B9BAC9E1290871E000DB68DD /* LaunchTableViewCell.swift in Sources */,
+				B9BAC9EF29098A3100DB68DD /* Company.swift in Sources */,
 				48D69BCB2514ECC700DD96AA /* CompanyViewController.swift in Sources */,
 				B96D3F882904593B00756D16 /* Request.swift in Sources */,
 				48D69BC72514ECC700DD96AA /* AppDelegate.swift in Sources */,
