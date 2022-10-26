@@ -28,6 +28,10 @@
 		B9BAC9EF29098A3100DB68DD /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BAC9EE29098A3100DB68DD /* Company.swift */; };
 		B9BAC9F229098A4D00DB68DD /* APIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BAC9F129098A4D00DB68DD /* APIModel.swift */; };
 		B9BAC9F429098B3800DB68DD /* Launch.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BAC9F329098B3800DB68DD /* Launch.swift */; };
+		B9F0906429098E860017348F /* CompanyProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F0906329098E860017348F /* CompanyProvider.swift */; };
+		B9F0906629098FCF0017348F /* CompanyRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F0906529098FCF0017348F /* CompanyRequest.swift */; };
+		B9F0906A2909905B0017348F /* APIContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F090692909905B0017348F /* APIContent.swift */; };
+		B9F0906C290997050017348F /* AllLaunchesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F0906B290997050017348F /* AllLaunchesRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +79,10 @@
 		B9BAC9EE29098A3100DB68DD /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
 		B9BAC9F129098A4D00DB68DD /* APIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIModel.swift; sourceTree = "<group>"; };
 		B9BAC9F329098B3800DB68DD /* Launch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Launch.swift; sourceTree = "<group>"; };
+		B9F0906329098E860017348F /* CompanyProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyProvider.swift; sourceTree = "<group>"; };
+		B9F0906529098FCF0017348F /* CompanyRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyRequest.swift; sourceTree = "<group>"; };
+		B9F090692909905B0017348F /* APIContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIContent.swift; sourceTree = "<group>"; };
+		B9F0906B290997050017348F /* AllLaunchesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllLaunchesRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +133,7 @@
 		48D69BC52514ECC700DD96AA /* Devskiller */ = {
 			isa = PBXGroup;
 			children = (
+				48D69BD72514ECC800DD96AA /* Info.plist */,
 				B9BAC9EB2909893D00DB68DD /* Utilities */,
 				B96D3F842903FBA200756D16 /* Supporting Files */,
 				B9BAC9E82909843600DB68DD /* SpeceX */,
@@ -154,7 +163,6 @@
 			isa = PBXGroup;
 			children = (
 				48D69BD22514ECC800DD96AA /* Assets.xcassets */,
-				48D69BD72514ECC800DD96AA /* Info.plist */,
 				48D69BD42514ECC800DD96AA /* LaunchScreen.storyboard */,
 				48D69BC62514ECC700DD96AA /* AppDelegate.swift */,
 				48D69BC82514ECC700DD96AA /* SceneDelegate.swift */,
@@ -188,7 +196,6 @@
 			isa = PBXGroup;
 			children = (
 				B9BAC9DA29086F9E00DB68DD /* CompanyTableViewCell.swift */,
-				48D69BCA2514ECC700DD96AA /* CompanyViewController.swift */,
 				B9BAC9E0290871E000DB68DD /* LaunchTableViewCell.swift */,
 			);
 			path = View;
@@ -225,6 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				B9BAC9E92909847A00DB68DD /* CompanyViewModel.swift */,
+				48D69BCA2514ECC700DD96AA /* CompanyViewController.swift */,
 				B9BAC9D929086EFD00DB68DD /* View */,
 			);
 			path = Company;
@@ -233,10 +241,30 @@
 		B9BAC9ED290989C600DB68DD /* API */ = {
 			isa = PBXGroup;
 			children = (
+				B9F09068290990340017348F /* Model */,
+				B9F090672909901D0017348F /* Request */,
+				B9F0906329098E860017348F /* CompanyProvider.swift */,
+				B9F090692909905B0017348F /* APIContent.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		B9F090672909901D0017348F /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				B9F0906529098FCF0017348F /* CompanyRequest.swift */,
+				B9F0906B290997050017348F /* AllLaunchesRequest.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		B9F09068290990340017348F /* Model */ = {
+			isa = PBXGroup;
+			children = (
 				B9BAC9EE29098A3100DB68DD /* Company.swift */,
 				B9BAC9F329098B3800DB68DD /* Launch.swift */,
 			);
-			path = API;
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -370,15 +398,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				B96D3F8D29045B9800756D16 /* URLSessionProtocol.swift in Sources */,
+				B9F0906429098E860017348F /* CompanyProvider.swift in Sources */,
+				B9F0906C290997050017348F /* AllLaunchesRequest.swift in Sources */,
 				B96D3F8F29045C6B00756D16 /* Bundle+Ext.swift in Sources */,
 				B96D3F9129045DC300756D16 /* HTTPClient.swift in Sources */,
 				B9BAC9E329087E2E00DB68DD /* UIStackView+Ext.swift in Sources */,
 				B9BAC9F229098A4D00DB68DD /* APIModel.swift in Sources */,
 				48D69BD12514ECC700DD96AA /* Devskiller.xcdatamodeld in Sources */,
+				B9F0906629098FCF0017348F /* CompanyRequest.swift in Sources */,
 				B9BAC9E52908811B00DB68DD /* UITableView+Ext.swift in Sources */,
 				B9BAC9EA2909847A00DB68DD /* CompanyViewModel.swift in Sources */,
 				B9BAC9F429098B3800DB68DD /* Launch.swift in Sources */,
 				B9BAC9E1290871E000DB68DD /* LaunchTableViewCell.swift in Sources */,
+				B9F0906A2909905B0017348F /* APIContent.swift in Sources */,
 				B9BAC9EF29098A3100DB68DD /* Company.swift in Sources */,
 				48D69BCB2514ECC700DD96AA /* CompanyViewController.swift in Sources */,
 				B96D3F882904593B00756D16 /* Request.swift in Sources */,

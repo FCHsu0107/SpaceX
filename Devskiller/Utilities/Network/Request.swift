@@ -47,7 +47,7 @@ enum HTTPMethod: String {
 
 protocol HTTPRequest {
     var baseUrlKey: String { get }
-    var method: String { get }
+    var method: HTTPMethod { get }
     var path: String { get }
     var headers: [String: String] { get }
     var body: [String: Any]? { get }

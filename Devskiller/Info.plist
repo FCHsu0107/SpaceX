@@ -56,5 +56,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>APIBaseURL</key>
+	<string>https://api.spacexdata.com/v4</string>
 </dict>
 </plist>

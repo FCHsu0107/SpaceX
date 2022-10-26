@@ -1,6 +1,8 @@
 import Foundation
 
 class HTTPClient: HTTPClientProtocol {
+    static let shared = HTTPClient()
+    
     private let session: URLSessionProtocol
     
     init(session: URLSessionProtocol = URLSession.shared) {
@@ -64,6 +66,7 @@ class HTTPClient: HTTPClientProtocol {
         guard let url = components.url else { return nil }
         var request = URLRequest(url: url)
         request.allHTTPHeaderFields = hpptRequest.headers
+        request.httpMethod = hpptRequest.method.rawValue
         
         if let body = hpptRequest.body {
             request.httpBody = try? JSONSerialization.data(withJSONObject: body, options: .prettyPrinted)

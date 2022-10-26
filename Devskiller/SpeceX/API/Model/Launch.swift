@@ -19,7 +19,7 @@ extension APIModel {
         let flightNumber: Int
         let name, dateUTC: String
         let dateUnix: Int
-        let dateLocal: Date
+        let dateLocal: String
         let datePrecision: DatePrecision
         let upcoming: Bool
         let cores: [Core]
