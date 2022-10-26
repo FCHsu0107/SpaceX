@@ -1,11 +1,12 @@
 import Foundation
+//import Combine
 
 class HTTPClient: HTTPClientProtocol {
     static let shared = HTTPClient()
     
     private let session: URLSessionProtocol
     
-    init(session: URLSessionProtocol = URLSession.shared) {
+    init(session: URLSession = URLSession.shared) {
         self.session = session
     }
     
@@ -46,6 +47,20 @@ class HTTPClient: HTTPClientProtocol {
             
         }.resume()
     }
+    
+//    func request<T: Decodable>(_ hpptRequest: HTTPRequest) -> AnyPublisher<T, HTTPClientError>  {
+//        guard let request = makeRequest(hpptRequest) else {
+//            return Fail(error: HTTPClientError.requestError).eraseToAnyPublisher()
+//        }
+//        return session.dataTaskPublisher(for: request)
+//            .mapError { error in
+//                    .responseError(message: error.localizedDescription)
+//            }
+//            .flatMap(maxPublishers: .max(1)) { pair in
+//              decode(pair.data)
+//            }
+//            .eraseToAnyPublisher()
+//    }
     
     private func makeRequest(_ hpptRequest: HTTPRequest) -> URLRequest? {
         guard let baseUrlString = Bundle.valueForString(hpptRequest.baseUrlKey),

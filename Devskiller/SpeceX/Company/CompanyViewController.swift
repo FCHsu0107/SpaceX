@@ -2,7 +2,17 @@ import UIKit
 
 class CompanyViewController: UIViewController {
     private lazy var tableView: UITableView = initTableView()
-
+    private let viewModel: CompanyViewModelProtocol
+    
+    init(viewModel: CompanyViewModelProtocol = CompanyViewModel()) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpUI()

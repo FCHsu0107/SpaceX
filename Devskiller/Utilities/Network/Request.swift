@@ -1,22 +1,28 @@
 import Foundation
+//import Combine
 
 protocol HTTPClientProtocol {
     typealias Result = Swift.Result<Data, HTTPClientError>
     
     func request(_ hpptRequest: HTTPRequest, completion: @escaping (Result) -> Void)
+//    func request<T>(_ hpptRequest: HTTPRequest) -> AnyPublisher<T, HTTPClientError> where T: Decodable
+
 }
 
 enum HTTPClientError: Error {
     case requestError
     case responseError(message: String)
-    case decodeError
+    case decodeError(message: String)
     case clientError(Data)
     case serverError(message: String)
     case unexpectedError
     
     var message: String {
         switch self {
-        case .decodeError, .requestError:
+        case .decodeError(let message):
+            return "Something went wrong. Fail to decode: \(message)"
+        
+        case .requestError:
             return "Something went wrong. Please contact technical support."
             
         case .responseError(let message):
