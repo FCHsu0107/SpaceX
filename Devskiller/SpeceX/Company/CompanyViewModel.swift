@@ -104,7 +104,6 @@ final class CompanyViewModel: CompanyViewModelProtocol {
     
     init(provider: CompanyProviderProtocol = CompanyProvider()) {
         self.provider = provider
-        fetchData()
     }
     
     func fetchData() {

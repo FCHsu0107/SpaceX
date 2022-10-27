@@ -54,7 +54,7 @@ final class CompanyViewController: UIViewController {
         ])
         
         addNavigationItem()
-        refreshControl.addTarget(self, action: #selector(fetchDate), for: .valueChanged)
+        refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
     }
     
     private func initTableView() -> UITableView {
@@ -82,7 +82,6 @@ final class CompanyViewController: UIViewController {
     }
     
     @objc private func filterDidClick() {
-        print("filter did click")
         showAlterView()
     }
     
@@ -130,7 +129,7 @@ final class CompanyViewController: UIViewController {
         retryView = nil
     }
     
-    @objc private func fetchDate() {
+    private func fetchDate() {
         refreshControl.beginRefreshing()
         viewModel.fetchData()
     }

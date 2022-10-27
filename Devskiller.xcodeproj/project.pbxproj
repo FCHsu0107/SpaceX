@@ -14,7 +14,6 @@
 		48D69BD12514ECC700DD96AA /* Devskiller.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 48D69BCF2514ECC700DD96AA /* Devskiller.xcdatamodeld */; };
 		48D69BD32514ECC800DD96AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48D69BD22514ECC800DD96AA /* Assets.xcassets */; };
 		48D69BD62514ECC800DD96AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48D69BD42514ECC800DD96AA /* LaunchScreen.storyboard */; };
-		48D69BE12514ECC800DD96AA /* DevskillerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D69BE02514ECC800DD96AA /* DevskillerTests.swift */; };
 		48D69BEC2514ECC800DD96AA /* DevskillerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D69BEB2514ECC800DD96AA /* DevskillerUITests.swift */; };
 		4CEF2707678933C062F1F6FA /* libPods-Devskiller.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CE404CD00199A14A9C1B1D4 /* libPods-Devskiller.a */; };
 		B96D3F882904593B00756D16 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96D3F872904593B00756D16 /* Request.swift */; };
@@ -73,7 +72,6 @@
 		48D69BD52514ECC800DD96AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		48D69BD72514ECC800DD96AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		48D69BDC2514ECC800DD96AA /* DevskillerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DevskillerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		48D69BE02514ECC800DD96AA /* DevskillerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevskillerTests.swift; sourceTree = "<group>"; };
 		48D69BE22514ECC800DD96AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		48D69BE72514ECC800DD96AA /* DevskillerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DevskillerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		48D69BEB2514ECC800DD96AA /* DevskillerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevskillerUITests.swift; sourceTree = "<group>"; };
@@ -182,7 +180,6 @@
 		48D69BDF2514ECC800DD96AA /* DevskillerTests */ = {
 			isa = PBXGroup;
 			children = (
-				48D69BE02514ECC800DD96AA /* DevskillerTests.swift */,
 				48D69BE22514ECC800DD96AA /* Info.plist */,
 			);
 			path = DevskillerTests;
@@ -565,7 +562,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48D69BE12514ECC800DD96AA /* DevskillerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
