@@ -53,13 +53,17 @@ struct CompanyViewData: Equatable {
         let isSuccessful: Bool
         
         init(_ launch: APIModel.Launch) {
+            let date = launch.dateLocal.getDate() ?? Date()
+            let distance = Int(Date().distance(to: date))
+            let isInThePast = distance < 0
+            
             mission = launch.name
-            dateAndTime = launch.dateLocal
+            dateAndTime = "\(date.getDateString()) at \(String(describing: date.getTimeString))"
             rocket = launch.rocket.rawValue
-            daysValue = ""
-            daysKey = ""
+            daysKey = isInThePast ? "Days since now:" : "Days from now:"
+            daysValue = String(distance)
             imageUrl = launch.links.patch.small
-            isSuccessful = launch.success ?? false
+            isSuccessful = launch.success ?? true
         }
     }
     

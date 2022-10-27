@@ -36,6 +36,8 @@
 		B9F0906A2909905B0017348F /* APIContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F090692909905B0017348F /* APIContent.swift */; };
 		B9F0906C290997050017348F /* AllLaunchesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F0906B290997050017348F /* AllLaunchesRequest.swift */; };
 		B9F09070290AC8570017348F /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F0906F290AC8570017348F /* Observable.swift */; };
+		B9F09072290ACAAB0017348F /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F09071290ACAAB0017348F /* String+Ext.swift */; };
+		B9F09074290ACDA80017348F /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F09073290ACDA80017348F /* Date+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +98,8 @@
 		B9F090692909905B0017348F /* APIContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIContent.swift; sourceTree = "<group>"; };
 		B9F0906B290997050017348F /* AllLaunchesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllLaunchesRequest.swift; sourceTree = "<group>"; };
 		B9F0906F290AC8570017348F /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		B9F09071290ACAAB0017348F /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
+		B9F09073290ACDA80017348F /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
 		DAAF85DC9DD812BCAAEB73BE /* Pods-DevskillerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DevskillerTests.debug.xcconfig"; path = "Target Support Files/Pods-DevskillerTests/Pods-DevskillerTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -230,6 +234,8 @@
 				B96D3F8E29045C6B00756D16 /* Bundle+Ext.swift */,
 				B9BAC9E229087E2E00DB68DD /* UIStackView+Ext.swift */,
 				B9BAC9E42908811B00DB68DD /* UITableView+Ext.swift */,
+				B9F09071290ACAAB0017348F /* String+Ext.swift */,
+				B9F09073290ACDA80017348F /* Date+Ext.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -551,10 +557,12 @@
 				B9F09070290AC8570017348F /* Observable.swift in Sources */,
 				B96D3F8D29045B9800756D16 /* Session.swift in Sources */,
 				B9F0906429098E860017348F /* CompanyProvider.swift in Sources */,
+				B9F09074290ACDA80017348F /* Date+Ext.swift in Sources */,
 				B9F0906C290997050017348F /* AllLaunchesRequest.swift in Sources */,
 				B96D3F8F29045C6B00756D16 /* Bundle+Ext.swift in Sources */,
 				B96D3F9129045DC300756D16 /* HTTPClient.swift in Sources */,
 				B9BAC9E329087E2E00DB68DD /* UIStackView+Ext.swift in Sources */,
+				B9F09072290ACAAB0017348F /* String+Ext.swift in Sources */,
 				B9BAC9F229098A4D00DB68DD /* APIModel.swift in Sources */,
 				48D69BD12514ECC700DD96AA /* Devskiller.xcdatamodeld in Sources */,
 				B9F0906629098FCF0017348F /* CompanyRequest.swift in Sources */,
