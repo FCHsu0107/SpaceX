@@ -35,6 +35,7 @@
 		B9F0906629098FCF0017348F /* CompanyRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F0906529098FCF0017348F /* CompanyRequest.swift */; };
 		B9F0906A2909905B0017348F /* APIContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F090692909905B0017348F /* APIContent.swift */; };
 		B9F0906C290997050017348F /* AllLaunchesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F0906B290997050017348F /* AllLaunchesRequest.swift */; };
+		B9F09070290AC8570017348F /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F0906F290AC8570017348F /* Observable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +95,7 @@
 		B9F0906529098FCF0017348F /* CompanyRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyRequest.swift; sourceTree = "<group>"; };
 		B9F090692909905B0017348F /* APIContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIContent.swift; sourceTree = "<group>"; };
 		B9F0906B290997050017348F /* AllLaunchesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllLaunchesRequest.swift; sourceTree = "<group>"; };
+		B9F0906F290AC8570017348F /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		DAAF85DC9DD812BCAAEB73BE /* Pods-DevskillerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DevskillerTests.debug.xcconfig"; path = "Target Support Files/Pods-DevskillerTests/Pods-DevskillerTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -264,6 +266,7 @@
 				B96D3F862904592500756D16 /* Network */,
 				B96D3F8B29045B5900756D16 /* Extension */,
 				B9BAC9DD290870BC00DB68DD /* UIComponent */,
+				B9F0906F290AC8570017348F /* Observable.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -545,6 +548,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9F09070290AC8570017348F /* Observable.swift in Sources */,
 				B96D3F8D29045B9800756D16 /* Session.swift in Sources */,
 				B9F0906429098E860017348F /* CompanyProvider.swift in Sources */,
 				B9F0906C290997050017348F /* AllLaunchesRequest.swift in Sources */,

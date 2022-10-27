@@ -1,9 +1,9 @@
 import UIKit
 import Promises
-import Combine
 
 protocol CompanyViewModelProtocol {
-    var data: CompanyViewData { get set }
+    var data: Observable<CompanyViewData> { get set }
+    
     func fetchData()
 }
 
@@ -38,8 +38,8 @@ struct CompanyViewData: Equatable {
         }
         
         func description() -> String {
-            let format: String = "%@ was founded by %@ in %@. It has now %@ employeess, %@ launch sites, and is valued at USD %@"
-            return String(format: format, [name, founder, foundedYear, numberOfEployee, launchSites, valuation])
+            let format = "%@ was founded by %@ in %@. It has now %@ employeess, %@ launch sites, and is valued at USD %@"
+            return String(format: format, name, founder, foundedYear, numberOfEployee, launchSites, valuation)
         }
     }
     
@@ -75,10 +75,9 @@ struct CompanyViewData: Equatable {
     }
 }
 
-final class CompanyViewModel: CompanyViewModelProtocol, ObservableObject {
+final class CompanyViewModel: CompanyViewModelProtocol {
     private let provider: CompanyProviderProtocol
-    
-    @Published var data = CompanyViewData()
+    var data: Observable<CompanyViewData> = Observable(CompanyViewData())
     
     init(provider: CompanyProviderProtocol = CompanyProvider()) {
         self.provider = provider
@@ -86,9 +85,9 @@ final class CompanyViewModel: CompanyViewModelProtocol, ObservableObject {
     }
     
     func fetchData() {
-        all(provider.fetchCompany2(), provider.fetchLaunches2())
-            .then { company, launches in
-                self.data = CompanyViewData(company: company, launches: launches)
+        all(provider.fetchCompany(), provider.fetchLaunches())
+            .then { [weak self] company, launches in
+                self?.data.value = CompanyViewData(company: company, launches: launches)
             }
     }
 }

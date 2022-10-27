@@ -1,8 +1,8 @@
 import UIKit
-
-class CompanyViewController: UIViewController {
-    private lazy var tableView: UITableView = initTableView()
+final class CompanyViewController: UIViewController {
     private let viewModel: CompanyViewModelProtocol
+    
+    private lazy var tableView: UITableView = initTableView()
     
     init(viewModel: CompanyViewModelProtocol = CompanyViewModel()) {
         self.viewModel = viewModel
@@ -16,6 +16,15 @@ class CompanyViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpUI()
+        bindViewModel()
+    }
+    
+    private func bindViewModel() {
+        viewModel.data.bind { _ in
+            DispatchQueue.main.async { [weak self] in
+                self?.tableView.reloadData()
+            }
+        }
     }
     
     private func setUpUI() {
@@ -49,19 +58,30 @@ extension CompanyViewController: UITableViewDelegate {}
 
 extension CompanyViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        2
+        viewModel.data.value?.sections.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        1
+        viewModel.data.value?.sections[section].Rows.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(LaunchTableViewCell.self, for: indexPath)
-        return cell
+        guard let item = viewModel.data.value?.sections[indexPath.section].Rows[indexPath.row] else {
+            return CompanyTableViewCell()
+        }
+        switch item {
+        case let .company(company):
+            let cell = tableView.dequeueReusableCell(CompanyTableViewCell.self, for: indexPath)
+            cell.config(company)
+            return cell
+        case let .launch(launch):
+            let cell = tableView.dequeueReusableCell(LaunchTableViewCell.self, for: indexPath)
+            cell.config(launch)
+            return cell
+        }
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-       return "Header \(section)"
+        viewModel.data.value?.sections[section].title
     }
 }
