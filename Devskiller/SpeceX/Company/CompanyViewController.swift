@@ -1,4 +1,5 @@
 import UIKit
+
 final class CompanyViewController: UIViewController {
     private let viewModel: CompanyViewModelProtocol
     
@@ -39,11 +40,12 @@ final class CompanyViewController: UIViewController {
         tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
         tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
+        
+        addNavigationItem()
     }
     
     private func initTableView() -> UITableView {
         let tableView = UITableView()
-        tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .none
         tableView.rowHeight = UITableView.automaticDimension
@@ -52,9 +54,22 @@ final class CompanyViewController: UIViewController {
         tableView.register(cellType: LaunchTableViewCell.self)
         return tableView
     }
+    
+    private func addNavigationItem() {
+        let filterItem = UIBarButtonItem(
+            image: UIImage(systemName: "arrow.up.arrow.down"),
+            style: .plain,
+            target: self,
+            action: #selector(filterDidClick)
+        )
+        filterItem.tintColor = .black
+        self.navigationItem.rightBarButtonItems = [filterItem]
+    }
+    
+    @objc private func filterDidClick() {
+        print("filter did click")
+    }
 }
-
-extension CompanyViewController: UITableViewDelegate {}
 
 extension CompanyViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {

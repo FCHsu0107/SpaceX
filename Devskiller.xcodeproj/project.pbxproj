@@ -295,7 +295,6 @@
 			children = (
 				B9F09068290990340017348F /* Model */,
 				B9F090672909901D0017348F /* Request */,
-				B9F0906329098E860017348F /* CompanyProvider.swift */,
 				B9F090692909905B0017348F /* APIContent.swift */,
 			);
 			path = API;
@@ -313,6 +312,7 @@
 		B9F09068290990340017348F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B9F0906329098E860017348F /* CompanyProvider.swift */,
 				B9BAC9EE29098A3100DB68DD /* Company.swift */,
 				B9BAC9F329098B3800DB68DD /* Launch.swift */,
 			);
