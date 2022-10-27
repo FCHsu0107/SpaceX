@@ -4,6 +4,7 @@ final class CompanyViewController: UIViewController {
     private let viewModel: CompanyViewModelProtocol
     
     private lazy var tableView: UITableView = initTableView()
+    private let refreshControl = UIRefreshControl()
     private var retryView: RetryView?
     
     init(viewModel: CompanyViewModelProtocol = CompanyViewModel()) {
@@ -19,11 +20,13 @@ final class CompanyViewController: UIViewController {
         super.viewDidLoad()
         setUpUI()
         bindViewModel()
+        fetchDate()
     }
     
     private func bindViewModel() {
         viewModel.data.bind { _ in
             DispatchQueue.main.async { [weak self] in
+                self?.refreshControl.endRefreshing()
                 self?.removeErrorView()
                 self?.tableView.reloadData()
             }
@@ -31,6 +34,7 @@ final class CompanyViewController: UIViewController {
         
         viewModel.error.bind { mesaage in
             DispatchQueue.main.async { [weak self] in
+                self?.refreshControl.endRefreshing()
                 self?.showErrorView(message: mesaage)
             }
         }
@@ -50,6 +54,7 @@ final class CompanyViewController: UIViewController {
         ])
         
         addNavigationItem()
+        refreshControl.addTarget(self, action: #selector(fetchDate), for: .valueChanged)
     }
     
     private func initTableView() -> UITableView {
@@ -61,6 +66,7 @@ final class CompanyViewController: UIViewController {
         tableView.register(cellType: CompanyTableViewCell.self)
         tableView.register(cellType: LaunchTableViewCell.self)
         tableView.register(cellType: UITableViewCell.self)
+        tableView.refreshControl = refreshControl
         return tableView
     }
     
@@ -107,7 +113,7 @@ final class CompanyViewController: UIViewController {
     
     private func showErrorView(message: String?) {
         guard let message = message else { return removeErrorView() }
-        retryView = RetryView(message: message, retry: viewModel.fetchData)
+        retryView = RetryView(message: message, retry: fetchDate)
         guard let retryView = retryView else { return }
         view.addSubview(retryView)
         retryView.translatesAutoresizingMaskIntoConstraints = false
@@ -122,6 +128,15 @@ final class CompanyViewController: UIViewController {
     private func removeErrorView() {
         retryView?.removeFromSuperview()
         retryView = nil
+    }
+    
+    @objc private func fetchDate() {
+        refreshControl.beginRefreshing()
+        viewModel.fetchData()
+    }
+    
+    @objc private func refreshData() {
+        viewModel.fetchData()
     }
 }
 
