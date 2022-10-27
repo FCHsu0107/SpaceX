@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		06C90C7EBAB378D79F947758 /* libPods-Devskiller-DevskillerUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B95D6520EDD05EAD6D12FB33 /* libPods-Devskiller-DevskillerUITests.a */; };
 		48D69BC72514ECC700DD96AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D69BC62514ECC700DD96AA /* AppDelegate.swift */; };
 		48D69BC92514ECC700DD96AA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D69BC82514ECC700DD96AA /* SceneDelegate.swift */; };
 		48D69BCB2514ECC700DD96AA /* CompanyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D69BCA2514ECC700DD96AA /* CompanyViewController.swift */; };
@@ -15,9 +16,7 @@
 		48D69BD62514ECC800DD96AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48D69BD42514ECC800DD96AA /* LaunchScreen.storyboard */; };
 		48D69BE12514ECC800DD96AA /* DevskillerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D69BE02514ECC800DD96AA /* DevskillerTests.swift */; };
 		48D69BEC2514ECC800DD96AA /* DevskillerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D69BEB2514ECC800DD96AA /* DevskillerUITests.swift */; };
-		642D13C2BF9077C06C23DC8C /* Pods_Devskiller.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49416B8BB5006375671985B0 /* Pods_Devskiller.framework */; };
-		87EA99413B69BD785F4109F2 /* Pods_Devskiller_DevskillerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57360B2F0A5E0193DDF4A427 /* Pods_Devskiller_DevskillerUITests.framework */; };
-		8D7D848B07925610858D88EF /* Pods_DevskillerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C8635A671DDF3F07A140D70 /* Pods_DevskillerTests.framework */; };
+		4CEF2707678933C062F1F6FA /* libPods-Devskiller.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CE404CD00199A14A9C1B1D4 /* libPods-Devskiller.a */; };
 		B96D3F882904593B00756D16 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96D3F872904593B00756D16 /* Request.swift */; };
 		B96D3F8D29045B9800756D16 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96D3F8C29045B9800756D16 /* Session.swift */; };
 		B96D3F8F29045C6B00756D16 /* Bundle+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96D3F8E29045C6B00756D16 /* Bundle+Ext.swift */; };
@@ -38,6 +37,8 @@
 		B9F09070290AC8570017348F /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F0906F290AC8570017348F /* Observable.swift */; };
 		B9F09072290ACAAB0017348F /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F09071290ACAAB0017348F /* String+Ext.swift */; };
 		B9F09074290ACDA80017348F /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F09073290ACDA80017348F /* Date+Ext.swift */; };
+		B9F09078290AD52A0017348F /* ImageViewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F09077290AD52A0017348F /* ImageViewWrapper.swift */; };
+		BBEEFCC099DA447CE4A52CD8 /* libPods-DevskillerTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CCD174DD30C2A44F63B6CE33 /* libPods-DevskillerTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,10 +77,9 @@
 		48D69BE72514ECC800DD96AA /* DevskillerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DevskillerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		48D69BEB2514ECC800DD96AA /* DevskillerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevskillerUITests.swift; sourceTree = "<group>"; };
 		48D69BED2514ECC800DD96AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		49416B8BB5006375671985B0 /* Pods_Devskiller.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Devskiller.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		57360B2F0A5E0193DDF4A427 /* Pods_Devskiller_DevskillerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Devskiller_DevskillerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6C8635A671DDF3F07A140D70 /* Pods_DevskillerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DevskillerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7CE404CD00199A14A9C1B1D4 /* libPods-Devskiller.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Devskiller.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8A40C2435E63E627CFAEEF4 /* Pods-DevskillerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DevskillerTests.release.xcconfig"; path = "Target Support Files/Pods-DevskillerTests/Pods-DevskillerTests.release.xcconfig"; sourceTree = "<group>"; };
+		B95D6520EDD05EAD6D12FB33 /* libPods-Devskiller-DevskillerUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Devskiller-DevskillerUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B96D3F872904593B00756D16 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		B96D3F8C29045B9800756D16 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		B96D3F8E29045C6B00756D16 /* Bundle+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Ext.swift"; sourceTree = "<group>"; };
@@ -100,6 +100,8 @@
 		B9F0906F290AC8570017348F /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		B9F09071290ACAAB0017348F /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		B9F09073290ACDA80017348F /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
+		B9F09077290AD52A0017348F /* ImageViewWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewWrapper.swift; sourceTree = "<group>"; };
+		CCD174DD30C2A44F63B6CE33 /* libPods-DevskillerTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DevskillerTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAAF85DC9DD812BCAAEB73BE /* Pods-DevskillerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DevskillerTests.debug.xcconfig"; path = "Target Support Files/Pods-DevskillerTests/Pods-DevskillerTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -108,7 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				642D13C2BF9077C06C23DC8C /* Pods_Devskiller.framework in Frameworks */,
+				4CEF2707678933C062F1F6FA /* libPods-Devskiller.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,7 +118,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D7D848B07925610858D88EF /* Pods_DevskillerTests.framework in Frameworks */,
+				BBEEFCC099DA447CE4A52CD8 /* libPods-DevskillerTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,7 +126,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				87EA99413B69BD785F4109F2 /* Pods_Devskiller_DevskillerUITests.framework in Frameworks */,
+				06C90C7EBAB378D79F947758 /* libPods-Devskiller-DevskillerUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,9 +136,9 @@
 		200C23A45F71F59F4E50B662 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				49416B8BB5006375671985B0 /* Pods_Devskiller.framework */,
-				57360B2F0A5E0193DDF4A427 /* Pods_Devskiller_DevskillerUITests.framework */,
-				6C8635A671DDF3F07A140D70 /* Pods_DevskillerTests.framework */,
+				7CE404CD00199A14A9C1B1D4 /* libPods-Devskiller.a */,
+				B95D6520EDD05EAD6D12FB33 /* libPods-Devskiller-DevskillerUITests.a */,
+				CCD174DD30C2A44F63B6CE33 /* libPods-DevskillerTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -166,6 +168,7 @@
 		48D69BC52514ECC700DD96AA /* Devskiller */ = {
 			isa = PBXGroup;
 			children = (
+				B9F09075290AD5090017348F /* Adapter */,
 				48D69BD72514ECC800DD96AA /* Info.plist */,
 				B9BAC9EB2909893D00DB68DD /* Utilities */,
 				B96D3F842903FBA200756D16 /* Supporting Files */,
@@ -316,6 +319,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		B9F09075290AD5090017348F /* Adapter */ = {
+			isa = PBXGroup;
+			children = (
+				B9F09077290AD52A0017348F /* ImageViewWrapper.swift */,
+			);
+			path = Adapter;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -327,7 +338,6 @@
 				48D69BBF2514ECC700DD96AA /* Sources */,
 				48D69BC02514ECC700DD96AA /* Frameworks */,
 				48D69BC12514ECC700DD96AA /* Resources */,
-				DF7AFC69DEC5AAEDE13E3C13 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -365,7 +375,6 @@
 				48D69BE32514ECC800DD96AA /* Sources */,
 				48D69BE42514ECC800DD96AA /* Frameworks */,
 				48D69BE52514ECC800DD96AA /* Resources */,
-				C8E45916E142463982E8DCAD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -491,40 +500,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C8E45916E142463982E8DCAD /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Devskiller-DevskillerUITests/Pods-Devskiller-DevskillerUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Devskiller-DevskillerUITests/Pods-Devskiller-DevskillerUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Devskiller-DevskillerUITests/Pods-Devskiller-DevskillerUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		DF7AFC69DEC5AAEDE13E3C13 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Devskiller/Pods-Devskiller-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Devskiller/Pods-Devskiller-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Devskiller/Pods-Devskiller-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		F3ED06F79DBE684A4174D1CF /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -570,6 +545,7 @@
 				B9BAC9EA2909847A00DB68DD /* CompanyViewModel.swift in Sources */,
 				B9BAC9F429098B3800DB68DD /* Launch.swift in Sources */,
 				B9BAC9E1290871E000DB68DD /* LaunchTableViewCell.swift in Sources */,
+				B9F09078290AD52A0017348F /* ImageViewWrapper.swift in Sources */,
 				B9F0906A2909905B0017348F /* APIContent.swift in Sources */,
 				B9BAC9EF29098A3100DB68DD /* Company.swift in Sources */,
 				48D69BCB2514ECC700DD96AA /* CompanyViewController.swift in Sources */,

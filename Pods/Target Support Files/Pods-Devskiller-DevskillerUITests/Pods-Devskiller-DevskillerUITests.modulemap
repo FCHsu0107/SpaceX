@@ -1,4 +1,4 @@
-framework module Pods_Devskiller_DevskillerUITests {
+module Pods_Devskiller_DevskillerUITests {
   umbrella header "Pods-Devskiller-DevskillerUITests-umbrella.h"
 
   export *

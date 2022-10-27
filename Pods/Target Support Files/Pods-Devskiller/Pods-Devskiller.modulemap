@@ -1,4 +1,4 @@
-framework module Pods_Devskiller {
+module Pods_Devskiller {
   umbrella header "Pods-Devskiller-umbrella.h"
 
   export *

@@ -2,11 +2,8 @@
 # platform :ios, '9.0'
 
 target 'Devskiller' do
-  # Comment the next line if you don't want to use dynamic frameworks
-  use_frameworks!
-
-  # Pods for Devskiller
-	pod 'PromisesSwift'
+    pod 'PromisesSwift'
+    pod 'Kingfisher', '~> 7.0'
 
   target 'DevskillerTests' do
     inherit! :search_paths

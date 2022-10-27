@@ -1,7 +1,7 @@
 import UIKit
 
 final class LaunchTableViewCell: UITableViewCell {
-    private lazy var missonPatchImageView = makeImageView()
+    private let patchImageView = UIImageView()
     private let descriptionView = DescriptionView()
     private let stateView = MarkView()
     
@@ -17,10 +17,11 @@ final class LaunchTableViewCell: UITableViewCell {
     func config(_ launch: CompanyViewData.Launch) {
         descriptionView.config(launch)
         stateView.config(isSuccessful: launch.isSuccessful)
+        patchImageView.set(launch.imageUrl, placeholder: UIImage(systemName: "questionmark"))
     }
     
     private func setupUI() {
-        let stackView = UIStackView().containing([missonPatchImageView, descriptionView, stateView])
+        let stackView = UIStackView().containing([patchImageView, descriptionView, stateView])
             .configured(axis: .horizontal, alignment: .top, distribution: .fillProportionally)
         stackView.spacing = 4
         
@@ -32,19 +33,12 @@ final class LaunchTableViewCell: UITableViewCell {
             stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -TT.verticalInset),
             stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: TT.sideInset),
             stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -TT.sideInset),
-            missonPatchImageView.heightAnchor.constraint(equalToConstant: 40),
-            missonPatchImageView.widthAnchor.constraint(equalToConstant: 40),
+            patchImageView.heightAnchor.constraint(equalToConstant: 40),
+            patchImageView.widthAnchor.constraint(equalToConstant: 40),
             stateView.heightAnchor.constraint(equalToConstant: 24),
             stateView.widthAnchor.constraint(equalToConstant: 24),
         ])
         stateView.config(isSuccessful: true)
-        
-    }
-    
-    private func makeImageView() -> UIImageView {
-        let imageView = UIImageView()
-        imageView.backgroundColor = .red
-        return imageView
     }
 }
 
