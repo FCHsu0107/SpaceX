@@ -1,6 +1,6 @@
 import UIKit
 
-class LaunchTableViewCell: UITableViewCell {
+final class LaunchTableViewCell: UITableViewCell {
     private lazy var missonPatchImageView = makeImageView()
     private let descriptionView = DescriptionView()
     private let stateView = MarkView()
@@ -12,6 +12,11 @@ class LaunchTableViewCell: UITableViewCell {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func config(_ launch: CompanyViewData.Launch) {
+        descriptionView.config(launch)
+        stateView.config(isSuccessful: launch.isSuccessful)
     }
     
     private func setupUI() {
@@ -73,6 +78,14 @@ fileprivate class DescriptionView: UIStackView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func config(_ launch: CompanyViewData.Launch) {
+        missionLabel.text = launch.mission
+        dateLabel.text = launch.dateAndTime
+        rocketLabel.text = launch.rocket
+        daysKeyLabel.text = launch.daysKey
+        daysValueLabel.text = launch.daysValue
+    }
+    
     private func setupUI() {
         backgroundColor = .brown
         let keyView = UIStackView().containing(keyLabels).configured(axis: .vertical)
@@ -96,7 +109,6 @@ fileprivate class DescriptionView: UIStackView {
     private func makeValueLabel() -> UILabel {
         let label = UILabel()
         label.textColor = .black
-        label.text = "BBBBBhhhhhhhhhhh"
         label.backgroundColor = .yellow
         label.setContentHuggingPriority(.defaultHigh, for: .vertical)
         label.setContentCompressionResistancePriority(.defaultHigh, for: .vertical)

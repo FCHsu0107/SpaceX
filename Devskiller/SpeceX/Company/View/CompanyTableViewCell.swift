@@ -1,10 +1,9 @@
 import UIKit
 
-class CompanyTableViewCell: UITableViewCell {
+final class CompanyTableViewCell: UITableViewCell {
     private var descriptionLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
-        label.text = "CompanyName was founded by founderName in year. It has now XXX employeess, launch_sties, and is valued at USD $$$$"
         return label
     }()
 
@@ -15,6 +14,10 @@ class CompanyTableViewCell: UITableViewCell {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func config(_ company: CompanyViewData.Company) {
+        descriptionLabel.text = company.description()
     }
     
     private func setupUI() {
