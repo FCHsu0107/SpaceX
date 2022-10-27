@@ -38,6 +38,7 @@
 		B9F09072290ACAAB0017348F /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F09071290ACAAB0017348F /* String+Ext.swift */; };
 		B9F09074290ACDA80017348F /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F09073290ACDA80017348F /* Date+Ext.swift */; };
 		B9F09078290AD52A0017348F /* ImageViewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F09077290AD52A0017348F /* ImageViewWrapper.swift */; };
+		B9F0907A290AEAAB0017348F /* RetryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F09079290AEAAB0017348F /* RetryView.swift */; };
 		BBEEFCC099DA447CE4A52CD8 /* libPods-DevskillerTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CCD174DD30C2A44F63B6CE33 /* libPods-DevskillerTests.a */; };
 /* End PBXBuildFile section */
 
@@ -101,6 +102,7 @@
 		B9F09071290ACAAB0017348F /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		B9F09073290ACDA80017348F /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
 		B9F09077290AD52A0017348F /* ImageViewWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewWrapper.swift; sourceTree = "<group>"; };
+		B9F09079290AEAAB0017348F /* RetryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetryView.swift; sourceTree = "<group>"; };
 		CCD174DD30C2A44F63B6CE33 /* libPods-DevskillerTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DevskillerTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAAF85DC9DD812BCAAEB73BE /* Pods-DevskillerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DevskillerTests.debug.xcconfig"; path = "Target Support Files/Pods-DevskillerTests/Pods-DevskillerTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -256,6 +258,7 @@
 			isa = PBXGroup;
 			children = (
 				B9BAC9DE290870E000DB68DD /* TheTheme.swift */,
+				B9F09079290AEAAB0017348F /* RetryView.swift */,
 			);
 			path = UIComponent;
 			sourceTree = "<group>";
@@ -546,6 +549,7 @@
 				B9BAC9F429098B3800DB68DD /* Launch.swift in Sources */,
 				B9BAC9E1290871E000DB68DD /* LaunchTableViewCell.swift in Sources */,
 				B9F09078290AD52A0017348F /* ImageViewWrapper.swift in Sources */,
+				B9F0907A290AEAAB0017348F /* RetryView.swift in Sources */,
 				B9F0906A2909905B0017348F /* APIContent.swift in Sources */,
 				B9BAC9EF29098A3100DB68DD /* Company.swift in Sources */,
 				48D69BCB2514ECC700DD96AA /* CompanyViewController.swift in Sources */,
