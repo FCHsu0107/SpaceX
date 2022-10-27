@@ -52,6 +52,7 @@ final class CompanyViewController: UIViewController {
         tableView.estimatedRowHeight = 60
         tableView.register(cellType: CompanyTableViewCell.self)
         tableView.register(cellType: LaunchTableViewCell.self)
+        tableView.register(cellType: UITableViewCell.self)
         return tableView
     }
     
@@ -68,6 +69,33 @@ final class CompanyViewController: UIViewController {
     
     @objc private func filterDidClick() {
         print("filter did click")
+        showAlterView()
+    }
+    
+    private func showAlterView() {
+        let alert = UIAlertController(
+            title: "Filter launch year",
+            message: "Enter a specific year",
+            preferredStyle: .alert
+        )
+        
+        alert.addTextField { (textField) in
+            textField.placeholder = "e.g. 2022"
+        }
+
+       
+        alert.addAction(UIAlertAction(title: "ASC", style: .default, handler: { [weak self] (_) in
+            guard let text = alert.textFields?[0].text, let year = Int(text) else { return }
+            self?.viewModel.filterLaunchYear(year, isASE: true)
+            
+        }))
+        alert.addAction(UIAlertAction(title: "DESC", style: .default, handler: { [weak self] (_) in
+            guard let text = alert.textFields?[0].text, let year = Int(text) else { return }
+            self?.viewModel.filterLaunchYear(year, isASE: false)
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        self.present(alert, animated: true, completion: nil)
     }
 }
 
@@ -82,7 +110,7 @@ extension CompanyViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let item = viewModel.data.value?.sections[indexPath.section].Rows[indexPath.row] else {
-            return CompanyTableViewCell()
+            return UITableViewCell()
         }
         switch item {
         case let .company(company):
@@ -92,6 +120,11 @@ extension CompanyViewController: UITableViewDataSource {
         case let .launch(launch):
             let cell = tableView.dequeueReusableCell(LaunchTableViewCell.self, for: indexPath)
             cell.config(launch)
+            return cell
+        case .empty:
+            let cell = tableView.dequeueReusableCell(UITableViewCell.self, for: indexPath)
+            cell.textLabel?.text = "There is no launches in this conditions. Please filter another year"
+            cell.textLabel?.numberOfLines = 0
             return cell
         }
     }

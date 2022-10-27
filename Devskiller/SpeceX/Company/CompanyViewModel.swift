@@ -5,6 +5,7 @@ protocol CompanyViewModelProtocol {
     var data: Observable<CompanyViewData> { get set }
     
     func fetchData()
+    func filterLaunchYear(_ year: Int, isASE: Bool)
 }
 
 struct CompanyViewData: Equatable {
@@ -18,6 +19,7 @@ struct CompanyViewData: Equatable {
     enum RowContent: Equatable, Hashable {
         case company(Company)
         case launch(Launch)
+        case empty
     }
     
     struct Company: Equatable, Hashable {
@@ -51,9 +53,10 @@ struct CompanyViewData: Equatable {
         let daysValue: String
         let imageUrl: String?
         let isSuccessful: Bool
+        let date: Date
         
         init(_ launch: APIModel.Launch) {
-            let date = launch.dateLocal.getDate() ?? Date()
+            date = launch.dateLocal.getDate() ?? Date()
             let distance = Int(Date().distance(to: date))
             let isInThePast = distance < 0
             
@@ -70,7 +73,19 @@ struct CompanyViewData: Equatable {
     init(company: APIModel.Company, launches: APIModel.Launches) {
         let companySection = Section(title: "COMPANY", Rows: [.company(Company(company))])
         let launches = launches.map { Launch($0) }
-        let launchesSecation = Section(title: "LAUNCHES", Rows: launches.map { .launch($0) })
+        let launchesSecation = Section(
+            title: "LAUNCHES",
+            Rows: launches.isEmpty ? [.empty] : launches.map { .launch($0) }
+        )
+        self.sections = [companySection, launchesSecation]
+    }
+    
+    init(company: Company, launches: [Launch]) {
+        let companySection = Section(title: "COMPANY", Rows: [.company(company)])
+        let launchesSecation = Section(
+            title: "LAUNCHES",
+            Rows: launches.isEmpty ? [.empty] : launches.map { .launch($0) }
+        )
         self.sections = [companySection, launchesSecation]
     }
     
@@ -81,6 +96,8 @@ struct CompanyViewData: Equatable {
 
 final class CompanyViewModel: CompanyViewModelProtocol {
     private let provider: CompanyProviderProtocol
+    private var company: CompanyViewData.Company?
+    private var launches: [CompanyViewData.Launch] = []
     var data: Observable<CompanyViewData> = Observable(CompanyViewData())
     
     init(provider: CompanyProviderProtocol = CompanyProvider()) {
@@ -91,7 +108,16 @@ final class CompanyViewModel: CompanyViewModelProtocol {
     func fetchData() {
         all(provider.fetchCompany(), provider.fetchLaunches())
             .then { [weak self] company, launches in
+                self?.company = CompanyViewData.Company(company)
+                self?.launches = launches.map { CompanyViewData.Launch($0)}
                 self?.data.value = CompanyViewData(company: company, launches: launches)
             }
+    }
+    
+    func filterLaunchYear(_ year: Int, isASE: Bool) {
+        guard let company = company else { return }
+        var launches = launches.filter { $0.date.year == year }
+        launches.sort(by: { isASE ? $0.date > $1.date : $0.date < $1.date })
+        data.value = CompanyViewData(company: company, launches: launches)
     }
 }
