@@ -1,16 +1,21 @@
 import Foundation
-//import Combine
 
-class HTTPClient: HTTPClientProtocol {
-    static let shared = HTTPClient()
+protocol HTTPClient {
+    typealias Result = Swift.Result<Data, HTTPClientError>
     
-    private let session: URLSessionProtocol
+    func request(_ hpptRequest: HTTPRequest, completion: @escaping (Result) -> Void)
+}
+
+class HTTPClientImpl: HTTPClient{
+    static let shared = HTTPClientImpl()
     
-    init(session: URLSession = URLSession.shared) {
+    private let session: Session
+    
+    init(session: Session = URLSession.shared) {
         self.session = session
     }
     
-    func request(_ hpptRequest: HTTPRequest, completion: @escaping (HTTPClientProtocol.Result) -> Void) {
+    func request(_ hpptRequest: HTTPRequest, completion: @escaping (HTTPClient.Result) -> Void) {
         guard let request = makeRequest(hpptRequest) else {
             return completion(Result.failure(HTTPClientError.requestError))
         }

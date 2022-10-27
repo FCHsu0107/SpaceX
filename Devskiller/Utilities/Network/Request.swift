@@ -1,13 +1,4 @@
 import Foundation
-//import Combine
-
-protocol HTTPClientProtocol {
-    typealias Result = Swift.Result<Data, HTTPClientError>
-    
-    func request(_ hpptRequest: HTTPRequest, completion: @escaping (Result) -> Void)
-//    func request<T>(_ hpptRequest: HTTPRequest) -> AnyPublisher<T, HTTPClientError> where T: Decodable
-
-}
 
 enum HTTPClientError: Error {
     case requestError

@@ -1,10 +1,8 @@
 import Foundation
-//import Combine
 
 protocol CompanyProviderProtocol {
     func fetchCompany(completion: @escaping (Result<APIModel.Company, HTTPClientError>) -> Void)
     func fetchLaunches(completion: @escaping (Result<APIModel.Launches, HTTPClientError>) -> Void)
-//    func fetchData() -> AnyPublisher<APIModel.Company, HTTPClientError>
 }
 
 class CompanyProvider: CompanyProviderProtocol {
@@ -47,9 +45,5 @@ class CompanyProvider: CompanyProviderProtocol {
                 completion(.failure(error))
             }
         }
-    }
-    
-    func fetchData() -> AnyPublisher<APIModel.Company, HTTPClientError> {
-        client.request(CompanyRequest())
     }
 }

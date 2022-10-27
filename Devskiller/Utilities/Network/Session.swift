@@ -1,5 +1,4 @@
 import Foundation
-//import Combine
 
 typealias DataTaskResult = (Data?, URLResponse?, Error?) -> Void
 
@@ -9,13 +8,11 @@ protocol URLSessionDataTaskProtocol {
 
 extension URLSessionDataTask: URLSessionDataTaskProtocol {}
 
-protocol URLSessionProtocol {
+protocol Session {
     func dataTask(with request: URLRequest, completionHandler: @escaping DataTaskResult) -> URLSessionDataTaskProtocol
-    
-//    func dataTaskPublisher(for request: URLRequest) -> URLSession.DataTaskPublisher
 }
 
-extension URLSession: URLSessionProtocol {
+extension URLSession: Session {
     func dataTask(with request: URLRequest, completionHandler: @escaping DataTaskResult) -> URLSessionDataTaskProtocol {
         dataTask(with: request, completionHandler: completionHandler)
     }
