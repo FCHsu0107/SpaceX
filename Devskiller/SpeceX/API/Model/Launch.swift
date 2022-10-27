@@ -6,6 +6,7 @@ extension APIModel {
     // MARK: - Launch
     struct Launch: Codable {
         let fairings: Fairings?
+        let links: LaunchLinks
         let staticFireDateUTC: String?
         let staticFireDateUnix: Int?
         let net: Bool
@@ -28,7 +29,7 @@ extension APIModel {
         let id: String
 
         enum CodingKeys: String, CodingKey {
-            case fairings
+            case fairings, links
             case staticFireDateUTC = "static_fire_date_utc"
             case staticFireDateUnix = "static_fire_date_unix"
             case net, window, rocket, success, failures, details, crew, ships, capsules, payloads, launchpad
@@ -110,6 +111,23 @@ extension APIModel {
         case the5E9E4502F509092B78566F87 = "5e9e4502f509092b78566f87"
         case the5E9E4502F509094188566F88 = "5e9e4502f509094188566f88"
         case the5E9E4502F5090995De566F86 = "5e9e4502f5090995de566f86"
+    }
+    
+    // MARK: - Links
+    struct LaunchLinks: Codable {
+        let patch: Patch
+        let reddit: Reddit
+        let presskit: String?
+        let webcast: String?
+        let youtubeID: String?
+        let article: String?
+        let wikipedia: String?
+
+        enum CodingKeys: String, CodingKey {
+            case patch, reddit, presskit, webcast
+            case youtubeID = "youtube_id"
+            case article, wikipedia
+        }
     }
 
     // MARK: - Patch
