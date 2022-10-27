@@ -34,8 +34,8 @@ final class LaunchTableViewCell: UITableViewCell {
             stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -TT.sideInset),
             missonPatchImageView.heightAnchor.constraint(equalToConstant: 40),
             missonPatchImageView.widthAnchor.constraint(equalToConstant: 40),
-            stateView.heightAnchor.constraint(equalToConstant: 20),
-            stateView.widthAnchor.constraint(equalToConstant: 20),
+            stateView.heightAnchor.constraint(equalToConstant: 24),
+            stateView.widthAnchor.constraint(equalToConstant: 24),
         ])
         stateView.config(isSuccessful: true)
         
@@ -87,9 +87,7 @@ fileprivate class DescriptionView: UIStackView {
     }
     
     private func setupUI() {
-        backgroundColor = .brown
         let keyView = UIStackView().containing(keyLabels).configured(axis: .vertical)
-        keyView.backgroundColor = .orange
         let valueView = UIStackView().containing(valueLabels).configured(axis: .vertical)
         containing([keyView, valueView])
         axis = .horizontal
@@ -100,7 +98,7 @@ fileprivate class DescriptionView: UIStackView {
         let label = UILabel()
         label.textColor = .gray
         label.text = key
-        label.backgroundColor = .green
+        label.font = UIFont.systemFont(ofSize: 12)
         label.setContentHuggingPriority(.defaultLow, for: .vertical)
         label.setContentCompressionResistancePriority(.defaultLow, for: .vertical)
         return label
@@ -109,7 +107,8 @@ fileprivate class DescriptionView: UIStackView {
     private func makeValueLabel() -> UILabel {
         let label = UILabel()
         label.textColor = .black
-        label.backgroundColor = .yellow
+        label.font = UIFont.systemFont(ofSize: 12)
+        label.numberOfLines = 0
         label.setContentHuggingPriority(.defaultHigh, for: .vertical)
         label.setContentCompressionResistancePriority(.defaultHigh, for: .vertical)
         return label
@@ -132,5 +131,7 @@ fileprivate class MarkView: UIImageView {
     func config(isSuccessful: Bool) {
         let state: State = isSuccessful ? .successful : .unsuccessful
         image = UIImage(systemName: state.imageName)
+        contentMode = .scaleAspectFit
+        tintColor = isSuccessful ? .green : .red
     }
 }
