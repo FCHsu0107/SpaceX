@@ -1,14 +1,17 @@
 import Foundation
+import Promises
 
 protocol CompanyProviderProtocol {
     func fetchCompany(completion: @escaping (Result<APIModel.Company, HTTPClientError>) -> Void)
     func fetchLaunches(completion: @escaping (Result<APIModel.Launches, HTTPClientError>) -> Void)
+    func fetchCompany2() -> Promise<APIModel.Company>
+    func fetchLaunches2() -> Promise<APIModel.Launches>
 }
 
 class CompanyProvider: CompanyProviderProtocol {
-    private let client: HTTPClientProtocol
+    private let client: HTTPClient
     
-    init(client: HTTPClientProtocol = HTTPClient.shared) {
+    init(client: HTTPClient = HTTPClient()) {
         self.client = client
     }
     
@@ -45,5 +48,13 @@ class CompanyProvider: CompanyProviderProtocol {
                 completion(.failure(error))
             }
         }
+    }
+    
+    func fetchCompany2() -> Promise<APIModel.Company> {
+        client.request(CompanyRequest())
+    }
+    
+    func fetchLaunches2() -> Promise<APIModel.Launches> {
+        client.request(AllLaunchesRequest())
     }
 }

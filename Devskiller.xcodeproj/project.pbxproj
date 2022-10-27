@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -35,7 +35,6 @@
 		B9F0906629098FCF0017348F /* CompanyRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F0906529098FCF0017348F /* CompanyRequest.swift */; };
 		B9F0906A2909905B0017348F /* APIContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F090692909905B0017348F /* APIContent.swift */; };
 		B9F0906C290997050017348F /* AllLaunchesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F0906B290997050017348F /* AllLaunchesRequest.swift */; };
-		B9F0906E2909ED970017348F /* Prasing.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F0906D2909ED970017348F /* Prasing.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,7 +94,6 @@
 		B9F0906529098FCF0017348F /* CompanyRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyRequest.swift; sourceTree = "<group>"; };
 		B9F090692909905B0017348F /* APIContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIContent.swift; sourceTree = "<group>"; };
 		B9F0906B290997050017348F /* AllLaunchesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllLaunchesRequest.swift; sourceTree = "<group>"; };
-		B9F0906D2909ED970017348F /* Prasing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prasing.swift; sourceTree = "<group>"; };
 		DAAF85DC9DD812BCAAEB73BE /* Pods-DevskillerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DevskillerTests.debug.xcconfig"; path = "Target Support Files/Pods-DevskillerTests/Pods-DevskillerTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -198,7 +196,6 @@
 				DAAF85DC9DD812BCAAEB73BE /* Pods-DevskillerTests.debug.xcconfig */,
 				A8A40C2435E63E627CFAEEF4 /* Pods-DevskillerTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -221,7 +218,6 @@
 				B96D3F8C29045B9800756D16 /* Session.swift */,
 				B96D3F9029045DC300756D16 /* HTTPClient.swift */,
 				B9BAC9F129098A4D00DB68DD /* APIModel.swift */,
-				B9F0906D2909ED970017348F /* Prasing.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -567,7 +563,6 @@
 				48D69BCB2514ECC700DD96AA /* CompanyViewController.swift in Sources */,
 				B96D3F882904593B00756D16 /* Request.swift in Sources */,
 				48D69BC72514ECC700DD96AA /* AppDelegate.swift in Sources */,
-				B9F0906E2909ED970017348F /* Prasing.swift in Sources */,
 				B9BAC9DF290870E000DB68DD /* TheTheme.swift in Sources */,
 				B9BAC9DB29086F9E00DB68DD /* CompanyTableViewCell.swift in Sources */,
 				48D69BC92514ECC700DD96AA /* SceneDelegate.swift in Sources */,
