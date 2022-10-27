@@ -58,7 +58,7 @@ struct CompanyViewData: Equatable {
             let isInThePast = distance < 0
             
             mission = launch.name
-            dateAndTime = "\(date.getDateString()) at \(String(describing: date.getTimeString))"
+            dateAndTime = date.getString("dd MMM yyyy 'at' HH:mm")
             rocket = launch.rocket.rawValue
             daysKey = isInThePast ? "Days since now:" : "Days from now:"
             daysValue = String(distance)
