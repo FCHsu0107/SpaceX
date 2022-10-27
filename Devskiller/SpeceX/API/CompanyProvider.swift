@@ -2,8 +2,8 @@ import Foundation
 import Promises
 
 protocol CompanyProviderProtocol {
-    func fetchCompany2() -> Promise<APIModel.Company>
-    func fetchLaunches2() -> Promise<APIModel.Launches>
+    func fetchCompany() -> Promise<APIModel.Company>
+    func fetchLaunches() -> Promise<APIModel.Launches>
 }
 
 final class CompanyProvider: CompanyProviderProtocol {
@@ -13,11 +13,11 @@ final class CompanyProvider: CompanyProviderProtocol {
         self.client = client
     }
     
-    func fetchCompany2() -> Promise<APIModel.Company> {
+    func fetchCompany() -> Promise<APIModel.Company> {
         client.request(CompanyRequest())
     }
     
-    func fetchLaunches2() -> Promise<APIModel.Launches> {
+    func fetchLaunches() -> Promise<APIModel.Launches> {
         client.request(AllLaunchesRequest())
     }
 }
