@@ -4,6 +4,7 @@ final class CompanyViewController: UIViewController {
     private let viewModel: CompanyViewModelProtocol
     
     private lazy var tableView: UITableView = initTableView()
+    private var retryView: RetryView?
     
     init(viewModel: CompanyViewModelProtocol = CompanyViewModel()) {
         self.viewModel = viewModel
@@ -23,7 +24,14 @@ final class CompanyViewController: UIViewController {
     private func bindViewModel() {
         viewModel.data.bind { _ in
             DispatchQueue.main.async { [weak self] in
+                self?.removeErrorView()
                 self?.tableView.reloadData()
+            }
+        }
+        
+        viewModel.error.bind { mesaage in
+            DispatchQueue.main.async { [weak self] in
+                self?.showErrorView(message: mesaage)
             }
         }
     }
@@ -33,12 +41,12 @@ final class CompanyViewController: UIViewController {
         view.backgroundColor = .white
         view.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        
+
         NSLayoutConstraint.activate([
-        tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-        tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-        tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-        tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
         
         addNavigationItem()
@@ -83,7 +91,6 @@ final class CompanyViewController: UIViewController {
             textField.placeholder = "e.g. 2022"
         }
 
-       
         alert.addAction(UIAlertAction(title: "ASC", style: .default, handler: { [weak self] (_) in
             guard let text = alert.textFields?[0].text, let year = Int(text) else { return }
             self?.viewModel.filterLaunchYear(year, isASE: true)
@@ -96,6 +103,25 @@ final class CompanyViewController: UIViewController {
         
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    private func showErrorView(message: String?) {
+        guard let message = message else { return removeErrorView() }
+        retryView = RetryView(message: message, retry: viewModel.fetchData)
+        guard let retryView = retryView else { return }
+        view.addSubview(retryView)
+        retryView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            retryView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            retryView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            retryView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            retryView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
+    }
+    
+    private func removeErrorView() {
+        retryView?.removeFromSuperview()
+        retryView = nil
     }
 }
 

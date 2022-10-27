@@ -3,6 +3,7 @@ import Promises
 
 protocol CompanyViewModelProtocol {
     var data: Observable<CompanyViewData> { get set }
+    var error: Observable<String> { get set }
     
     func fetchData()
     func filterLaunchYear(_ year: Int, isASE: Bool)
@@ -99,6 +100,7 @@ final class CompanyViewModel: CompanyViewModelProtocol {
     private var company: CompanyViewData.Company?
     private var launches: [CompanyViewData.Launch] = []
     var data: Observable<CompanyViewData> = Observable(CompanyViewData())
+    var error: Observable<String> = Observable(nil)
     
     init(provider: CompanyProviderProtocol = CompanyProvider()) {
         self.provider = provider
@@ -106,11 +108,15 @@ final class CompanyViewModel: CompanyViewModelProtocol {
     }
     
     func fetchData() {
+        data.value = nil
         all(provider.fetchCompany(), provider.fetchLaunches())
             .then { [weak self] company, launches in
                 self?.company = CompanyViewData.Company(company)
                 self?.launches = launches.map { CompanyViewData.Launch($0)}
+                self?.error.value = nil
                 self?.data.value = CompanyViewData(company: company, launches: launches)
+            }.catch { [weak self] _ in
+                self?.error.value = "Something went wrong! \nPlaese try it again."
             }
     }
     
